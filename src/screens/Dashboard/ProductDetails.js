@@ -96,7 +96,7 @@ const ProductDetails = () => {
   return (
     <View>
       <ScrollView>
-      <StatusBar backgroundColor="#1AAABC" />
+        <StatusBar backgroundColor="#1AAABC" />
         <View className="mx-4 flex-1 ">
           <View className="-mt-12">
             <Image
@@ -107,25 +107,35 @@ const ProductDetails = () => {
           <View className="my-2">
             <Text className="font-Bold text-newDark">Brown Dress</Text>
             <Text className="text-newDark">Dress fabric pure cotton</Text>
-            <Text className="font-bold text-theme my-1">
+            <Text className="font-bold text-theme my-0">
               {'\u20B9'}
               3999
             </Text>
-            <View className="flex-row gap-1">
-              <Text className="text-center text-newDark">Size </Text>
-              <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
-                S
-              </Text>
-              <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
-                M
-              </Text>
-              <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
-                L
-              </Text>
+            <View className="flex-row gap-2 items-center">
+              <View>
+                <Text className="text-center text-newDark">Size </Text>
+              </View>
+              <TouchableOpacity>
+                <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
+                  S
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
+                  M
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
+                  L
+                </Text>
+              </TouchableOpacity>
             </View>
           </View>
           <CustomBtn name="+  Add To Bag" />
-          <Text className="text-center my-3 tracking-[4px] text-ptext">Gallery</Text>
+          <Text className="text-center my-3 tracking-[4px] text-ptext">
+            Gallery
+          </Text>
           <View className="">
             <Image
               className="mb-3 w-[100%] h-[165px]"
@@ -140,7 +150,9 @@ const ProductDetails = () => {
               source={productImg.CartProduct18}
             />
           </View>
-          <Text className="my-2  tracking-[4px] font-bold text-ptext">Care</Text>
+          <Text className="my-2  tracking-[4px] font-bold text-ptext">
+            Care
+          </Text>
           <View className="my-1">
             {/* Colapse heading */}
             <Collapse>
@@ -165,7 +177,9 @@ const ProductDetails = () => {
               </CollapseHeader>
               <CollapseBody>
                 <View className="ml-[12%] mb-2">
-                  <Text className="text-newDark">Estimated to be delivered on</Text>
+                  <Text className="text-newDark">
+                    Estimated to be delivered on
+                  </Text>
                   <Text className="text-newDark">09/06/2023 - 12/06/2023.</Text>
                 </View>
               </CollapseBody>
@@ -179,7 +193,9 @@ const ProductDetails = () => {
                 <View className="flex-row items-center justify-between">
                   <View className="flex-row items-center gap-2">
                     <Image className="w-5 h-5" source={iconConst.Tag} />
-                    <Text className="font-Normal text-[16px] text-newDark">COD Policy</Text>
+                    <Text className="font-Normal text-[16px] text-newDark">
+                      COD Policy
+                    </Text>
                   </View>
                   {/* <Image className="w-5 h-5" source={iconConst.BottomForword} /> */}
                   {collapsed ? (
@@ -239,52 +255,52 @@ const ProductDetails = () => {
         </View>
         <View>
           {
-             <FlatList
-             data={productData}
-             className="mx-4 p-2"
-             numColumns={2}
-             renderItem={({item, index}) => {
-               return (
-                 <View className="border-2 border-gray-100 w-[50%] ">
-                   <Image
-                     className="w-[166px] h-[200px]"
-                     source={item.image}
-                   />
-                   <View className="p-2">
-                     <View className="flex-row justify-end items-center -mt-8">
-                       <TouchableOpacity
-                         onPress={() => favrouiteHandlerProduct(index)}>
-                         {item.like ? (
-                           <Image
-                             className="w-[20px] h-[18px]"
-                             source={HeartFill}
-                           />
-                         ) : (
-                           <Image
-                             className="w-[20px] h-[18px]"
-                             source={Heart}
-                           />
-                         )}
-                       </TouchableOpacity>
-                     </View>
-                     <View className="py-3">
-                       <Text className="text-newDark">{item.title}</Text>
-                       <Text className="text-newDark">{item.discription}</Text>
-                       <View className="flex-row items-center gap-2">
-                         <Text className="font-bold text-blackc">
-                           {'\u20B9'}
-                           {item.price}{' '}
-                         </Text>
-                         <Text className="text-theme text-[8px] font-Normal">
-                           50% OFF
-                         </Text>
-                       </View>
-                     </View>
-                   </View>
-                 </View>
-               );
-             }}
-           />
+            <FlatList
+              data={productData}
+              className="mx-4 p-2"
+              numColumns={2}
+              renderItem={({item, index}) => {
+                return (
+                  <View className="border-2 border-gray-100 w-[50%] ">
+                    <Image
+                      className="w-[166px] h-[200px]"
+                      source={item.image}
+                    />
+                    <View className="p-2">
+                      <View className="flex-row justify-end items-center -mt-8">
+                        <TouchableOpacity
+                          onPress={() => favrouiteHandlerProduct(index)}>
+                          {item.like ? (
+                            <Image
+                              className="w-[20px] h-[18px]"
+                              source={HeartFill}
+                            />
+                          ) : (
+                            <Image
+                              className="w-[20px] h-[18px]"
+                              source={Heart}
+                            />
+                          )}
+                        </TouchableOpacity>
+                      </View>
+                      <View className="py-3">
+                        <Text className="text-newDark">{item.title}</Text>
+                        <Text className="text-newDark">{item.discription}</Text>
+                        <View className="flex-row items-center gap-2">
+                          <Text className="font-bold text-blackc">
+                            {'\u20B9'}
+                            {item.price}{' '}
+                          </Text>
+                          <Text className="text-theme text-[8px] font-Normal">
+                            50% OFF
+                          </Text>
+                        </View>
+                      </View>
+                    </View>
+                  </View>
+                );
+              }}
+            />
           }
         </View>
       </ScrollView>
