@@ -22,6 +22,17 @@ import TopForword from '../assets/icons/other/TopForward.png';
 import CheckBox from '../assets/icons/other/check.png';
 import CheckBoxEmpty from '../assets/icons/other/empty-checkbox.png';
 
+import Location from '../assets/icons/other/Location.png'
+import Call from '../assets/icons/other/Call.png'
+import Line from '../assets/icons/other/line2.png'
+import Twitter from '../assets/icons/other/Twitter.png'
+import Instagram from '../assets/icons/other/Instagram.png'
+import Youtube from '../assets/icons/other/YouTube.png'
+import GrayLine from '../assets/icons/other/Divider.png'
+import Line13 from '../assets/icons/other/Line13.png'
+import RightForword from '../assets/icons/other/RightForward.png'
+
+
 
 export const image1 = require('../assets/images/young-beautiful-smiling-female/1.png');
 export const image2 = require('../assets/images/young-beautiful-smiling-female/2.png');
@@ -40,6 +51,8 @@ export const categoryProduct1 = require('../assets/images/Rectangle1.png');
 export const categoryProduct2 = require('../assets/images/Rectangle2.png');
 
 
+
+
 export const iconConst = {
   Home: Home,
   Categories: Categories,
@@ -55,6 +68,15 @@ export const iconConst = {
   TopForword: TopForword,
   CheckBox: CheckBox,
   CheckBoxEmpty: CheckBoxEmpty,
+  Twitter: Twitter,
+  Instagram: Instagram,
+  Youtube: Youtube,
+  Location: Location,
+  Call: Call,
+  Line: Line,
+  GrayLine: GrayLine,
+  Line13: Line13,
+  RightForword: RightForword,
 };
 
 export const productImg = {

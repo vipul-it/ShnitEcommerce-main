@@ -30,6 +30,7 @@ module.exports = {
         stext: '#6E878B',
         bgtext: '#C4C4C4',
         htext: '#333333', 
+        newDark: '#555555',
       },
     },
   },

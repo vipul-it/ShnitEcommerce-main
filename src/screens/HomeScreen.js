@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Button,
   FlatList,
+  StatusBar,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Header from '../common/Header';
@@ -130,6 +131,7 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView className="bg-whitec flex-1">
+      <StatusBar backgroundColor="#1AAABC" />
       <View>
         <Header />
         <ScrollView className="">
@@ -148,21 +150,21 @@ const HomeScreen = () => {
 
             <View className="mx-12 my-3 flex-row justify-between">
               <TouchableOpacity onPress={() => console.log('kjdsfhsdkfjh')}>
-                <Text className="text-stext">All</Text>
+                <Text className="text-newDark">All</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => console.log('kjdsfhsdsskfjh')}>
-                <Text className="text-stext">Apparel</Text>
+                <Text className="text-newDark">Apparel</Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={() => console.log('kjdsfhsdsskfjh')}>
-                <Text className="text-stext">Tshirt</Text>
+                <Text className="text-newDark">Tshirt</Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={() => console.log('kjdsfhsdkfjh')}>
-                <Text className="text-stext">Dress</Text>
+                <Text className="text-newDark">Dress</Text>
               </TouchableOpacity>
 
               <TouchableOpacity onPress={() => console.log('kjdsfhsdddkfjh')}>
-                <Text className="text-stext">Bag</Text>
+                <Text className="text-newDark">Bag</Text>
               </TouchableOpacity>
             </View>
 
@@ -176,7 +178,7 @@ const HomeScreen = () => {
                     <View className="border border-gray-100 w-[50%] ">
                       {item.new && (
                         <View className="absolute z-20 bg-theme p-2 right-0">
-                          <Text className="text-whitec ">New</Text>
+                          <Text className="text-whitec">New</Text>
                         </View>
                       )}
                       <Image
@@ -215,10 +217,10 @@ const HomeScreen = () => {
                             )}
                           </TouchableOpacity>
                         </View>
-                        <Text className="">{item.title}</Text>
-                        <Text className="">Cardiganu</Text>
+                        <Text className="text-newDark">{item.title}</Text>
+                        <Text className="text-newDark">Cardiganu</Text>
                         <View className="flex-row items-center gap-2">
-                          <Text className="font-bold">
+                          <Text className="font-bold text-newDark">
                             {'\u20B9'}
                             {item.price}{' '}
                           </Text>
@@ -277,10 +279,10 @@ const HomeScreen = () => {
                           </TouchableOpacity>
                         </View>
                         <View className="py-3">
-                          <Text className="">{item.title}</Text>
-                          <Text className="">{item.discription}</Text>
+                          <Text className="text-newDark">{item.title}</Text>
+                          <Text className="text-newDark">{item.discription}</Text>
                           <View className="flex-row items-center gap-2">
-                            <Text className="font-bold">
+                            <Text className="font-bold text-newDark">
                               {'\u20B9'}
                               {item.price}{' '}
                             </Text>

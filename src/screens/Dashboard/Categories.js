@@ -1,4 +1,4 @@
-import {View, Text, FlatList, Image, TouchableOpacity} from 'react-native';
+import {View, Text, FlatList, Image, TouchableOpacity, StatusBar} from 'react-native';
 import React, {useState} from 'react';
 import S1 from '../../assets/images/w/w.png';
 import Heart from '../../assets/images/card/heart.png';
@@ -91,12 +91,13 @@ const Categories = ({navigation}) => {
   };
   return (
     <View className="bg-whitec flex-1">
+      <StatusBar backgroundColor="#1AAABC" />
       <View className="mx-8 mt-2 flex-row justify-between items-center">
         <Text className=" text-htext text-lg">4500 Apparel</Text>
         <View className="flex-row gap-1">
           <TouchableOpacity className="bg-gray-200 rounded-3xl w-16 h-8 items-center justify-center ">
             <View className="flex-row">
-              <Text>New</Text>
+              <Text className="text-newDark">New</Text>
               <Image
                 source={CategoriesIcon.Down}
                 resizeMode="contain"
@@ -128,9 +129,11 @@ const Categories = ({navigation}) => {
           renderItem={({item, index}) => {
             return (
               <TouchableOpacity
+              
                 onPress={() => navigation.navigate('ProductDetails')}>
                 <View className="">
-                  <View className="border-4 border-gray-50 w-[100%] flex-row">
+                <StatusBar backgroundColor="#1AAABC" />
+                  <View className=" flex-row">
                     <View>
                       <Image className="w-[100px] h-[142px]" source={item.image} />
                       <TouchableOpacity
@@ -151,26 +154,26 @@ const Categories = ({navigation}) => {
 
                     <View className="p-2">
                       <View className="py-3">
-                        <Text className="font-bold">{item.title}</Text>
-                        <Text className="">{item.discription}</Text>
+                        <Text className="font-bold text-newDark">{item.title}</Text>
+                        <Text className="text-newDark">{item.discription}</Text>
                           <Text className="font-bold text-theme my-1">
                             {'\u20B9'}
                             {item.price}
                           </Text>
                         <View className="flex-row gap-1 items-center">
                           <Image className="w-3 h-3" source={iconConst.Star} />
-                          <Text>{item.rating} Ratings</Text>
+                          <Text className="text-newDark">{item.rating} Ratings</Text>
                         </View>
 
                         <View className="flex-row gap-1 my-1">
-                          <Text className="text-center ">Size </Text>
-                          <Text className="border-[1px] border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
+                          <Text className="text-center text-newDark">Size </Text>
+                          <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
                             S
                           </Text>
-                          <Text className="border-[1px] border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
+                          <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
                             M
                           </Text>
-                          <Text className="border-[1px] border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
+                          <Text className="border-[1px] text-newDark border-theme my-2 w-4 h-4 text-center rounded-full text-[12px]">
                             L
                           </Text>
                         </View>

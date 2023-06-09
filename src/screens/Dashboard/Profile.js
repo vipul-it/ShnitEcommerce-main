@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, StatusBar } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { removeAllKeys, setData } from '../../utils/Common'
@@ -16,6 +16,7 @@ const Profile = () => {
     }
     return (
         <SafeAreaView className="flex-1">
+            <StatusBar backgroundColor="#1AAABC" />
             <View>
                 <TouchableOpacity
                     onPress={logoutHandler}

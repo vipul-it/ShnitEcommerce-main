@@ -92,8 +92,7 @@ const TabStack = () => (
         },
         tabBarStyle: {
           borderTopWidth: 0,
-          width: 360,
-
+          width: '100%',
           height: 60,
           paddingBottom: Platform.OS == 'ios' ? 15 : 4,
         },
