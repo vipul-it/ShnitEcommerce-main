@@ -20,11 +20,6 @@ const CustomDrawer = () => {
     },
     {
       id: 1,
-      title: 'Apparel',
-      body: 'Outer',
-    },
-    {
-      id: 3,
       title: 'Bag',
       body: 'Outer',
     },
