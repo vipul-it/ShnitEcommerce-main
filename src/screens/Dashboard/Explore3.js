@@ -4,14 +4,14 @@ import {iconConst} from '../../utils/Images';
 
 import CustomBtn from '../../components/Custom/CustomBtn';
 
-const Explore = () => {
+const Explore3 = () => {
   return (
     <View>
       <StatusBar backgroundColor="#1AAABC" />
       <View className="mx-4">
         <View className="justify-center items-center">
           <Text className="text-newDark uppercase text-[18px] font-Bold text-center mt-12 tracking-[3px]">
-          Payment Method
+            ADD SHIPPING ADDRESS
           </Text>
           <Image
             className="w-28 h-2 flex"
@@ -19,49 +19,52 @@ const Explore = () => {
             alt="border"
           />
         </View>
-        <View className="justify-center items-center my-4">
-            <Image className="w-[300px] h-[169px]" source={iconConst.Card} alt='card' />
-        </View>
 
         <View className="flex-row justify-between mt-2">
           <TextInput
-            className="border-b-[0.3px] w-[100%] border-btext text-newDark"
-            placeholder="Name On Card"
-          />
-          
-        </View>
-        <Text className="text-gray-450 text-[11px]">*Please enter your exaxtly as it appears on your card</Text>
-        <View className="flex-row justify-between">
-          <TextInput
-            className="border-b-[0.3px] w-[100%] border-btext text-newDark"
-            placeholder="Card Number"
-          />
-        </View>
-        
-        <View className="flex-row justify-between">
-          <TextInput
             className="border-b-[0.3px] w-[40%] border-btext text-newDark"
-            placeholder="Exp Month"
+            placeholder="First Name"
           />
           <TextInput
             className="border-b-[0.3px] w-[40%] border-btext text-newDark"
-            placeholder="Exp Date"
+            placeholder="Last Name"
+          />
+        </View>
+        <View className="flex-row justify-between">
+          <TextInput
+            className="border-b-[0.3px] w-[100%] border-btext text-newDark"
+            placeholder="Address"
           />
         </View>
         <View className="flex-row ">
           <TextInput
             className="border-b-[0.3px] w-[100%] border-btext text-newDark"
-            placeholder="CVV"
+            placeholder="City"
+          />
+        </View>
+        <View className="flex-row justify-between">
+          <TextInput
+            className="border-b-[0.3px] w-[40%] border-btext text-newDark"
+            placeholder="State"
+          />
+          <TextInput
+            className="border-b-[0.3px] w-[40%] border-btext text-newDark"
+            placeholder="ZIP Code"
+          />
+        </View>
+        <View className="flex-row ">
+          <TextInput
+            className="border-b-[0.3px] w-[100%] border-btext text-newDark"
+            placeholder="Phone Number"
           />
         </View>
 
-        <View className="mt-24">
+        <View className="mt-[80%]">
           <CustomBtn name="+  Add Now" />
         </View>
-        
       </View>
     </View>
   );
 };
 
-export default Explore;
+export default Explore3;

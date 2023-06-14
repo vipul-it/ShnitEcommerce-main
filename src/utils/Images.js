@@ -51,7 +51,19 @@ export const categoryProduct1 = require('../assets/images/Rectangle1.png');
 export const categoryProduct2 = require('../assets/images/Rectangle2.png');
 
 
-
+import Customborder from "../assets/images/payment/customborder.png"
+import Card from "../assets/images/payment/card.png"
+import Minus from "../assets/images/payment/minus.png"
+import Plus from "../assets/images/payment/pluse.png"
+import paymentsucess from "../assets/images/payment/paymentsucess.png"
+import Rectangle344 from "../assets/images/payment/Rectangle344.png"
+import Disappointed from "../assets/images/payment/Disappointed.png"
+import Happy from "../assets/images/payment/Happy.png"
+import InLove from "../assets/images/payment/InLove.png"
+import DoortoDoorDelivery from "../assets/images/payment/DoortoDoorDelivery.png"
+import MasterCard from "../assets/images/payment/MasterCard.png"
+import Shoppingbag from "../assets/images/payment/shoppingbag.png"
+import Voucher from "../assets/images/payment/Voucher.png"
 
 export const iconConst = {
   Home: Home,
@@ -77,6 +89,24 @@ export const iconConst = {
   GrayLine: GrayLine,
   Line13: Line13,
   RightForword: RightForword,
+
+  Customborder: Customborder,
+  Card: Card,
+  Minus: Minus,
+  Disappointed: Disappointed,
+  DoortoDoorDelivery: DoortoDoorDelivery,
+  Happy: Happy,
+  InLove: InLove,
+  MasterCard: MasterCard,
+  Minus: Minus,
+  Plus: Plus,
+  Rectangle344: Rectangle344,
+  Shoppingbag: Shoppingbag,
+  Voucher: Voucher,
+  paymentsucess: paymentsucess,
+
+
+
 };
 
 export const productImg = {
