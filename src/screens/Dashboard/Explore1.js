@@ -6,15 +6,15 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import CustomBtn2 from '../../components/Custom/CustomBtm2';
 
 const Explore1 = () => {
-  const [count, setCount] = useState(1);
+    const [count, setCount] = useState(1);
 
-  countHandlerMinus = () => {
-    setCount (count - 1);
-  };
+    countHandlerMinus = () => {
+      setCount (count - 1);
+    };
 
-  countHandlerPluse = () => {
-    setCount (count + 1);
-  };
+    countHandlerPluse = () => {
+      setCount (count + 1);
+    };
   return (
     <View>
       <StatusBar backgroundColor="#1AAABC" />

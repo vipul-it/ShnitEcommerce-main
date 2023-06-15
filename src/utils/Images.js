@@ -64,6 +64,9 @@ import DoortoDoorDelivery from "../assets/images/payment/DoortoDoorDelivery.png"
 import MasterCard from "../assets/images/payment/MasterCard.png"
 import Shoppingbag from "../assets/images/payment/shoppingbag.png"
 import Voucher from "../assets/images/payment/Voucher.png"
+import Close from "../assets/images/payment/Close.png"
+
+
 
 export const iconConst = {
   Home: Home,
@@ -104,6 +107,7 @@ export const iconConst = {
   Shoppingbag: Shoppingbag,
   Voucher: Voucher,
   paymentsucess: paymentsucess,
+  Close: Close,
 
 
 
