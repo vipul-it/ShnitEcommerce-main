@@ -3,7 +3,7 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeScreen from '../screens/HomeScreen';
-import CustomDrawer from '../screens//Home/CustomDrawer';
+import CustomDrawer from '../screens/Home/CustomDrawer';
 
 // import Home from './Home/Home';
 // import WatchList from './MyAccount/WatchList';

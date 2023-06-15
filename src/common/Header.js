@@ -19,7 +19,7 @@ const Header = () => {
     <SafeAreaView className="bg-whitec">
       <View className="border-b border-btext">
      
-      <View className="mx-4 my-2 flex-row justify-between items-center ">
+      <View className="mx-4 my-3 flex-row justify-between items-center ">
         <View className="flex-row justify-center items-center gap-3 z-40">
           <TouchableOpacity
           // onPress={()=>alert('lkdfjsdklf')}

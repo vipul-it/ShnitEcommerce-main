@@ -15,7 +15,7 @@ import {setData} from '../../utils/Common';
 import {useDispatch} from 'react-redux';
 
 const Welcome = ({navigation}) => {
-  // const navigation = useNavigation();
+ 
   const dispatch = useDispatch();
   const loginHandler = () => {
     navigation.navigate('Login');
