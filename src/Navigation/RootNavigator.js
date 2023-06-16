@@ -12,7 +12,7 @@ import Explore from '../screens/Dashboard/Explore';
 
 import ProductDetails from '../screens/Dashboard/ProductDetails';
 import CustomDrawer from '../screens/Home/CustomDrawer';
-import MainRotutes from './MainStack';
+import MainRotutes from './MainRotutes';
 import Checkout1 from '../screens/Dashboard/Checkout1';
 import Checkout2 from '../screens/Dashboard/Checkout2';
 import Checkout3 from '../screens/Dashboard/Checkout3';

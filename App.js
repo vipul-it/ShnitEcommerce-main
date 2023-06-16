@@ -4,20 +4,17 @@ import {NavigationContainer} from '@react-navigation/native';
 import RootNavigator from './src/Navigation/RootNavigator';
 // import SplashScreen from 'react-native-splash-screen';
 import { Provider } from 'react-redux';
-import Store from './src/redux/Store';
+import Store from './src/redux/store';
 
 
 const App = () => {
  
   return (
    
-   <View style={{flex:1}}>
     <Provider store={Store}>
       <RootNavigator/>
     </Provider>
-      
-   
-    </View>
+    
   );
 };
 

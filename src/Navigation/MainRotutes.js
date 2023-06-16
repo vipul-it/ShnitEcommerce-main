@@ -5,11 +5,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeScreen from '../screens/HomeScreen';
 import CustomDrawer from '../screens/Home/CustomDrawer';
 
-// import Home from './Home/Home';
-// import WatchList from './MyAccount/WatchList';
-// import PaymentList from './MyAccount/PaymentList';
-// import PaymentMethod from './MyAccount/PaymentMethod';
-// import PriceCalculator from './Auction/Bids';
+
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Login from '../screens/Onboarding/Login';
@@ -34,36 +30,8 @@ const Tab = createBottomTabNavigator();
   /* bottom navigator */
 }
 
-
-const DrawerStack = () => (
+const TabStack = () => (
   <>
-    <Drawer.Navigator
-      screenOptions={{
-        headerShown: false,
-        initialRouteName: 'HomeScreen',
-        drawerStyle: {
-          width: Platform.OS == 'ios' ? '80%' : '80%',
-          height: '100%',
-          backgroundColor: '#fff',
-          color: '#1AAABC',
-        },
-      }}
-      drawerContent={props => <CustomDrawer {...props} />}>
-      <Drawer.Screen name="Drawer Screen" component={TabStack} />
-      <Drawer.Screen name="New" component={New} />
-      <Drawer.Screen name="Apparel" component={Apparel} />
-      <Drawer.Screen name="Bag" component={Bag} />
-      <Drawer.Screen name="Shoes" component={Shoes} />
-      <Drawer.Screen name="Beauty" component={Beauty} />
-      <Drawer.Screen name="Accessories" component={Accessories} />
-      <Drawer.Screen name="Login" component={Login} />
-    </Drawer.Navigator>
-  </>
-);
-
-const MainRotutes = () => {
-  return (
-    <>
     <Tab.Navigator
       backBehavior="history"
       initialRouteName="Home"
@@ -147,6 +115,53 @@ const MainRotutes = () => {
       />
     </Tab.Navigator>
   </>
+);
+
+const DrawerStack = () => (
+  <>
+    <Drawer.Navigator
+      screenOptions={{
+        headerShown: false,
+        initialRouteName: 'HomeScreen',
+        drawerStyle: {
+          width: Platform.OS == 'ios' ? '80%' : '80%',
+          height: '100%',
+          backgroundColor: '#fff',
+          color: '#1AAABC',
+        },
+      }}
+      drawerContent={props => <CustomDrawer {...props} />}>
+      <Drawer.Screen name="Drawer Screen" component={TabStack} />
+      <Drawer.Screen name="New" component={New} />
+      <Drawer.Screen name="Apparel" component={Apparel} />
+      <Drawer.Screen name="Bag" component={Bag} />
+      <Drawer.Screen name="Shoes" component={Shoes} />
+      <Drawer.Screen name="Beauty" component={Beauty} />
+      <Drawer.Screen name="Accessories" component={Accessories} />
+      <Drawer.Screen name="Login" component={Login} />
+    </Drawer.Navigator>
+  </>
+);
+
+const MainRotutes = () => {
+  return (
+    <>
+      <Stack.Navigator
+        initialRouteName="DrawerStack"
+        screenOptions={{
+          headerShown: false,
+        }}>
+        {/* <Stack.Screen name="Home" component={Home} /> */}
+
+        <Stack.Screen name="DrawerStack" component={DrawerStack} />
+        <Stack.Screen name="ProductDetails" component={ProductDetails} />
+
+        {/* <Stack.Screen name="PaymentList" component={PaymentList} />
+        <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
+
+        <Stack.Screen name="SellerConfirm" component={SellerConfirm} /> */}
+      </Stack.Navigator>
+    </>
   );
 };
 
