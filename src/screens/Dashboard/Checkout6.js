@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Alert,
   Modal,
@@ -10,9 +10,18 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {iconConst} from '../../utils/Images';
+import { useNavigation } from '@react-navigation/native';
 
 const Checkout6 = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const navigation = useNavigation();
+  
+  // useEffect(() => {
+  //     const timer = setTimeout(()=>{
+  //       setModalVisible(true)
+  //     }, 100);
+  //   });
+  
+  const [modalVisible, setModalVisible] = useState(true);
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -20,14 +29,18 @@ const Checkout6 = () => {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
+          // Alert.alert('Modal has been closed.');
           setModalVisible(!modalVisible);
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
             <Pressable
               style={{position: 'absolute', top: 10, right: 10}}
-              onPress={() => setModalVisible(!modalVisible)}>
+              // onPress={() => setModalVisible(!modalVisible)}
+              onPress={()=>{
+                navigation.navigate('HomeScreen')
+              }}
+              >
               <Image
                 style={{width: 20, height: 20}}
                 source={iconConst.Close}
@@ -75,23 +88,23 @@ const Checkout6 = () => {
             <View style={{display:'flex', flexDirection: "row", justifyContent:'space-between', position: 'absolute', bottom:10 }}>
               <TouchableOpacity
                 style={[styles.buttonBottom, styles.buttonSubmit]}
-                onPress={() => setModalVisible(false)}>
+                onPress={()=>{
+                  navigation.navigate('HomeScreen')
+                }}>
                 <Text style={{textAlign:'center', fontWeight: 500, fontSize: 16, color: 'white'}}>Submit</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 style={[styles.buttonBottom, styles.buttonBackHome]}
-                onPress={() => setModalVisible(false)}>
+                onPress={()=>{
+                  navigation.navigate('HomeScreen')
+                }}>
                 <Text style={{textAlign:'center', fontWeight: 500, fontSize: 16, color: '#42585A'}}>Back to home</Text>
               </TouchableOpacity>
             </View>
           </View>
         </View>
       </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
+      
     </View>
   );
 };

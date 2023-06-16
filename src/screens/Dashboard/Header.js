@@ -1,19 +1,18 @@
 import {View, Text, TouchableOpacity, Image, StatusBar, SafeAreaView} from 'react-native';
 import React, { useEffect } from 'react';
-import menubar from '../assets/images/Top/align-left.png';
-import bag from '../assets/images/Top/Bag.png';
-import heart from '../assets/images/Top/Heart.png';
-import notification from '../assets/images/Top/Notification.png';
-import search from '../assets/images/Top/Search.png';
-import logo from '../assets/images/Top/logo.png';
+// import menubar from '../assets/images/Top/align-left.png';
+import menubar from '../../assets/images/Top/align-left.png';
+import bag from '../../assets/images/Top/Bag.png';
+import heart from '../../assets/images/Top/Heart.png';
+import notification from '../../assets/images/Top/Notification.png';
+import search from '../../assets/images/Top/Search.png';
+import logo from '../../assets/images/Top/logo.png';
 import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
-  const navigation=useNavigation()
+  const navigation =useNavigation();
 
-  useEffect(() => {
-  //  navigation.openDrawer()
-  }, [])
+  
   
   return (
     <SafeAreaView className="bg-whitec">
@@ -23,7 +22,11 @@ const Header = () => {
         <View className="flex-row justify-center items-center gap-3 z-40">
           <TouchableOpacity
           // onPress={()=>alert('lkdfjsdklf')}
-          onPress={()=>navigation.openDrawer()}
+          // onPress={()=>navigation.openDrawer()}
+          onPress={()=>{
+            navigation.navigate("CustomDrawer")
+          }}
+          
           >
             <Image className="w-6 h-6" source={menubar} />
           </TouchableOpacity>

@@ -1,11 +1,14 @@
-import {View, Text, StatusBar, Image} from 'react-native';
+import {View, Text, StatusBar, Image,TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {iconConst} from '../../utils/Images';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+
 
 import CustomBtn2 from '../../components/Custom/CustomBtm2';
+import { useNavigation } from '@react-navigation/native';
 
 const Checkout1 = () => {
+  const navigation = useNavigation();
+
     const [count, setCount] = useState(1);
 
     countHandlerMinus = () => {
@@ -96,6 +99,9 @@ const Checkout1 = () => {
             name="CHECKOUT"
             srcPath={iconConst.Shoppingbag}
             alt="shopping"
+            onPress={()=>{
+              navigation.navigate("Checkout2")
+            }}
           />
         </View>
       </View>

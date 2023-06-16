@@ -1,8 +1,10 @@
 import { Image, View} from 'react-native'
 import React, { useEffect } from 'react'
 import SplashScreenImage from "../../assets/images/splashimg.png";
+import { useNavigation } from '@react-navigation/native';
 
-const SplashScreenMain = ({navigation}) => {
+const SplashScreenMain = () => {
+  const navigation = useNavigation();
   useEffect(() => {
     const timer = setTimeout(()=>{
       navigation.navigate('Welcome')

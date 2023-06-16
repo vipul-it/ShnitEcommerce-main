@@ -10,19 +10,32 @@ import {
   StatusBar,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
-import Header from '../common/Header';
-import homeImg from '../assets/images/homeScreen/pic.png';
 
-import {image1, image2, image3, image4, productImg1, productImg2, productImg3, productImg4, productImg5, productImg6} from '../utils/Images';
+import homeImg from '../../assets/images/homeScreen/pic.png';
 
-import Heart from '../assets/images/card/heart.png';
-import HeartFill from '../assets/images/card/heart-fill.png';
+import {
+  image1,
+  image2,
+  image3,
+  image4,
+  productImg1,
+  productImg2,
+  productImg3,
+  productImg4,
+  productImg5,
+  productImg6,
+} from '../../utils/Images';
+
+import Heart from '../../assets/images/card/heart.png';
+import HeartFill from '../../assets/images/card/heart-fill.png';
 import {Rating} from 'react-native-ratings';
 import {moderateScale} from 'react-native-size-matters';
-import CustomBtn from '../components/Custom/CustomBtn';
-import BestCollectionImg from '../assets/images/homeScreen/Frame686556095.png';
-import border from '../assets/images/homeScreen/boder.png';
-import { useNavigation } from '@react-navigation/native';
+import CustomBtn from '../../components/Custom/CustomBtn';
+import BestCollectionImg from '../../assets/images/homeScreen/Frame686556095.png';
+import border from '../../assets/images/homeScreen/boder.png';
+import {useNavigation} from '@react-navigation/native';
+import Header from './Header';
+// import TabBar from './TabBar';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -114,7 +127,6 @@ const HomeScreen = () => {
       like: false,
       image: productImg6,
     },
-  
   ];
 
   const [data, setData] = useState(DATA);
@@ -129,10 +141,7 @@ const HomeScreen = () => {
     let temp = [...productData];
     temp[i].like = !temp[i].like;
     setProductData(temp);
-
-
   };
-  
 
   return (
     <SafeAreaView className="bg-whitec flex-1">
@@ -154,31 +163,36 @@ const HomeScreen = () => {
             </View>
 
             <View className="mx-12 my-3 flex-row justify-between">
-              <TouchableOpacity onPress={() => {
-                navigation.navigate("Categories")
-              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Categories');
+                }}>
                 <Text className="text-newDark">All</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => {
-                navigation.navigate("Categories")
-              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Categories');
+                }}>
                 <Text className="text-newDark">Apparel</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => {
-                navigation.navigate("Categories")
-              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Categories');
+                }}>
                 <Text className="text-newDark">Tshirt</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => {
-                navigation.navigate("Categories")
-              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Categories');
+                }}>
                 <Text className="text-newDark">Dress</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => {
-                navigation.navigate("Categories")
-              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Categories');
+                }}>
                 <Text className="text-newDark">Bag</Text>
               </TouchableOpacity>
             </View>
@@ -196,10 +210,15 @@ const HomeScreen = () => {
                           <Text className="text-whitec">New</Text>
                         </View>
                       )}
-                      <Image
-                        className="w-[166px] h-[200px]"
-                        source={item.image}
-                      />
+                      <TouchableOpacity
+                        onPress={() => {
+                          navigation.navigate('Categories');
+                        }}>
+                        <Image
+                          className="w-[166px] h-[200px]"
+                          source={item.image}
+                        />
+                      </TouchableOpacity>
                       <View className="p-2">
                         <View className="flex-row justify-between items-center">
                           <View className="flex-row">
@@ -250,10 +269,12 @@ const HomeScreen = () => {
               />
             }
             <View className="mx-4 my-4">
-              <CustomBtn name={'Explore More'} onPress={()=>{
-                navigation.navigate("Explore")
-                
-              }}/>
+              <CustomBtn
+                name={'Explore More'}
+                onPress={() => {
+                  navigation.navigate('Categories');
+                }}
+              />
             </View>
             <View>
               <Image
@@ -275,10 +296,16 @@ const HomeScreen = () => {
                 renderItem={({item, index}) => {
                   return (
                     <View className="border-2 border-gray-100 w-[50%] ">
-                      <Image
-                        className="w-[166px] h-[200px]"
-                        source={item.image}
-                      />
+                      <TouchableOpacity
+                        onPress={() => {
+                          navigation.navigate('Categories');
+                        }}>
+                        <Image
+                          className="w-[166px] h-[200px]"
+                          source={item.image}
+                        />
+                      </TouchableOpacity>
+
                       <View className="p-2">
                         <View className="flex-row justify-end items-center -mt-8">
                           <TouchableOpacity
@@ -298,7 +325,9 @@ const HomeScreen = () => {
                         </View>
                         <View className="py-3">
                           <Text className="text-newDark">{item.title}</Text>
-                          <Text className="text-newDark">{item.discription}</Text>
+                          <Text className="text-newDark">
+                            {item.discription}
+                          </Text>
                           <View className="flex-row items-center gap-2">
                             <Text className="font-bold text-newDark">
                               {'\u20B9'}
@@ -317,6 +346,7 @@ const HomeScreen = () => {
             }
           </View>
         </ScrollView>
+        {/* <TabBar /> */}
       </View>
     </SafeAreaView>
   );

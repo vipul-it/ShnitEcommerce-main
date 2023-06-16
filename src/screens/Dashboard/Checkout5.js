@@ -7,8 +7,10 @@ import {
   CollapseHeader,
   CollapseBody,
 } from 'accordion-collapse-react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Checkout5 = () => {
+  const navigation = useNavigation();
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapse = () => {
@@ -166,6 +168,9 @@ const Checkout5 = () => {
             name="CHECKOUT"
             srcPath={iconConst.Shoppingbag}
             alt="shopping"
+            onPress={()=>{
+              navigation.navigate("Checkout6")
+            }}
           />
         </View>
       </View>

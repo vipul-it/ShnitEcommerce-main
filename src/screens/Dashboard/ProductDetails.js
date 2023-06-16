@@ -27,8 +27,10 @@ import {
   productImg5,
   productImg6,
 } from '../../utils/Images';
+import { useNavigation } from '@react-navigation/native';
 
 const ProductDetails = () => {
+  const navigation = useNavigation();
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapse = () => {
@@ -132,7 +134,9 @@ const ProductDetails = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <CustomBtn name="+  Add To Bag" />
+          <CustomBtn name="+  Add To Bag" onPress={() => {
+                navigation.navigate("Checkout1")
+              }} />
           <Text className="text-center my-3 tracking-[4px] text-ptext">
             Gallery
           </Text>

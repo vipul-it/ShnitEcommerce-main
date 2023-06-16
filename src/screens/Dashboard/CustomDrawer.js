@@ -10,8 +10,10 @@ import {
 } from 'react-native';
 import {AccordionList} from 'react-native-accordion-list-view';
 import {iconConst} from '../../utils/Images';
+import { useNavigation } from '@react-navigation/native';
 
 const CustomDrawer = () => {
+  const navigation =useNavigation();
   const data = [
     {
       id: 0,
@@ -47,7 +49,7 @@ const CustomDrawer = () => {
     }
   }, []);
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: '#ffffff', flex:1}}>
       <View className="mx-4">
         <View className="flex-row justify-between py-4">
           <View>
@@ -74,28 +76,44 @@ const CustomDrawer = () => {
             )}
             customBody={item => (
               <View className="py-0 mt-2 pl-2">
-                <TouchableOpacity >
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">Outer</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">Dress</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">Blouse/Shirt</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">T-shirt</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">Knitwear</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">Pants</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">Denim</Text>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{
+                  navigation.navigate("Categories")
+                }} >
                   <Text className="my-2 text-newDark">Kids</Text>
                 </TouchableOpacity>
               </View>

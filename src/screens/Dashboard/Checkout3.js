@@ -3,8 +3,10 @@ import React from 'react';
 import {iconConst} from '../../utils/Images';
 
 import CustomBtn from '../../components/Custom/CustomBtn';
+import { useNavigation } from '@react-navigation/native';
 
 const Checkout3 = () => {
+  const navigation =useNavigation(); 
   return (
     <View>
       <StatusBar backgroundColor="#1AAABC" />
@@ -60,7 +62,10 @@ const Checkout3 = () => {
         </View>
 
         <View className="mt-[80%]">
-          <CustomBtn name="+  Add Now" />
+          <CustomBtn name="+  Add Now" 
+          onPress={()=>{
+            navigation.navigate("Checkout4")
+          }}/>
         </View>
       </View>
     </View>

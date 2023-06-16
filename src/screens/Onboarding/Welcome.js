@@ -1,40 +1,12 @@
-import {
-  View,
-  Text,
-  StatusBar,
-  SafeAreaView,
-  TextInput,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import React, { useEffect } from 'react';
+import {View, Text, StatusBar, SafeAreaView, Image} from 'react-native';
+import React from 'react';
 import {images} from '../../utils/ImageConstant';
 import {useNavigation} from '@react-navigation/native';
 import CustomBtn from '../../components/Custom/CustomBtn';
-import {setData} from '../../utils/Common';
-import {useDispatch} from 'react-redux';
 
 const Welcome = () => {
+  const navigation = useNavigation();
 
-  const navigation = useNavigation()
-  // useEffect(() => {
-  //   const timer = setTimeout(()=>{
-  //     navigation.navigate('Home')
-  //   }, 10000);
-  // });
-  // const dispatch = useDispatch();
-  // const loginHandler = () => {
-  //   navigation.navigate('Login');
-  // };
-
-  // const getStartHandler = async () => {
-  //   dispatch({
-  //     type: 'CHANGE_STACK',
-  //     payload: 'MAIN',
-  //   });
-  //   let name = 'MAIN';
-  //   await setData('StackName', name);
-  // };
   return (
     <SafeAreaView className="flex-1 bg-white">
       <StatusBar backgroundColor="#1AAABC" />
@@ -48,12 +20,20 @@ const Welcome = () => {
         </Text>
       </View>
       <View className="mx-4 my-2">
-        <CustomBtn name={'Login/SignUp'} onPress={()=>{
-          navigation.navigate('Login')
-        }} />
+        <CustomBtn
+          name={'Login/SignUp'}
+          onPress={() => {
+            navigation.navigate('Login');
+          }}
+        />
       </View>
       <View className="mx-4 my-4">
-        <CustomBtn name={'Get Started'} onPress={()=>{navigation.navigate('HomeScreen')}} />
+        <CustomBtn
+          name={'Get Started'}
+          onPress={() => {
+            navigation.navigate('HomeScreen');
+          }}
+        />
       </View>
     </SafeAreaView>
   );
