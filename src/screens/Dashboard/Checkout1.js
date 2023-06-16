@@ -5,7 +5,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import CustomBtn2 from '../../components/Custom/CustomBtm2';
 
-const Explore1 = () => {
+const Checkout1 = () => {
     const [count, setCount] = useState(1);
 
     countHandlerMinus = () => {
@@ -103,4 +103,4 @@ const Explore1 = () => {
   );
 };
 
-export default Explore1;
+export default Checkout1;

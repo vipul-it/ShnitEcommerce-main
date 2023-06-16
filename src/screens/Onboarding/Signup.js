@@ -9,11 +9,12 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 import {iconConst} from '../../utils/Images';
+import { useNavigation } from '@react-navigation/native';
+import CustomBtn from '../../components/Custom/CustomBtn';
 
-const Signup = props => {
-  let {route} = props;
-
-  console.log(route.params.data), 'ls;lks;lks;lksl;ks';
+const Signup = () => {
+  
+    const navigation = useNavigation();
 
   const [isSelected, setSelection] = useState(false);
 
@@ -21,14 +22,7 @@ const Signup = props => {
     setSelection(!isSelected);
   };
 
-  const signupHandler = async () => {
-    dispatch({
-      type: 'CHANGE_STACK',
-      payload: 'MAIN',
-    });
-    let name = 'MAIN';
-    await setData('StackName', name);
-  };
+  
 
   return (
     <SafeAreaView className="flex-1 bg-white">
@@ -62,9 +56,9 @@ const Signup = props => {
         /> */}
           <TouchableOpacity onPress={changeIcons}>
             {isSelected ? (
-              <Image source={iconConst.CheckBox} />
+              <Image className="w-5 h-5" source={iconConst.CheckBox} />
             ) : (
-              <Image source={iconConst.CheckBoxEmpty} />
+              <Image className="w-5 h-5" source={iconConst.CheckBoxEmpty} />
             )}
           </TouchableOpacity>
 
@@ -78,7 +72,7 @@ const Signup = props => {
           <CustomBtn
             name={'SignUp'}
             onPress={() => {
-              signupHandler();
+              navigation.navigate("HomeScreen");
             }}
           />
         </View>

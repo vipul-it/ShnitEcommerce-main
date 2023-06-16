@@ -4,7 +4,7 @@ import {iconConst} from '../../utils/Images';
 
 import CustomBtn from '../../components/Custom/CustomBtn';
 
-const Explore4 = () => {
+const Checkout4 = () => {
   return (
     <View>
       <StatusBar backgroundColor="#1AAABC" />
@@ -64,4 +64,4 @@ const Explore4 = () => {
   );
 };
 
-export default Explore4;
+export default Checkout4;

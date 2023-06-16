@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Explore = () => {
+const Navigationfile = () => {
   return (
     <View>
-      <Text>Explore</Text>
+      <Text>navigationfile</Text>
     </View>
   )
 }
 
-export default Explore
+export default Navigationfile;

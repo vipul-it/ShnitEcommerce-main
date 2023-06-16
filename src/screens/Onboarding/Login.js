@@ -13,8 +13,8 @@ import {useDispatch, useSelector} from 'react-redux';
 
 const Login = () => {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
-  const {product} = useSelector(state => state.cartReducers);
+  // const dispatch = useDispatch();
+  // const {product} = useSelector(state => state.cartReducers);
 
   // console.log(product,'----');
 
@@ -26,9 +26,7 @@ const Login = () => {
   //   });
   // };
  
-  const SignupHandler = () => {
-    navigation.navigate('SignUp');
-  };
+  
   
 
   return (
@@ -47,18 +45,22 @@ const Login = () => {
           <TextInput className="pl-4" placeholder="Password" />
         </View>
         <View className="mx-4 my-2">
-          <TouchableOpacity onPress={navigation.navigate('RecoverPassword')}>
+          {/* <TouchableOpacity onPress={navigation.navigate('RecoverPassword')}>
             <Text className="text-center text-sm">Forgot Password ?</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
 
         <View className="mx-4 my-2">
           <CustomBtn
             name={'Login'}
+            onPress={()=>{
+              navigation.navigate('HomeScreen')
+            }}
           />
+         
         </View>
         <View className="mx-4 my-2">
-          <TouchableOpacity onPress={navigation.navigate('SignUp')}>
+          <TouchableOpacity >
              <Text className="text-center text-sm text-blackc">
             Doesn't Have An Account ?
           </Text>
@@ -67,9 +69,12 @@ const Login = () => {
         </View>
         <View className="mx-4 my-4">
           <CustomBtn
-            name={'SignUp'}
-            onPress={SignupHandler}
+            name={'Signup'}
+            onPress={()=>{
+              navigation.navigate('Signup')
+            }}
           />
+          
         </View>
       </View>
     </SafeAreaView>

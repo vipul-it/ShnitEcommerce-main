@@ -22,8 +22,10 @@ import {moderateScale} from 'react-native-size-matters';
 import CustomBtn from '../components/Custom/CustomBtn';
 import BestCollectionImg from '../assets/images/homeScreen/Frame686556095.png';
 import border from '../assets/images/homeScreen/boder.png';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
   const DATA = [
     {
       id: '1',
@@ -127,7 +129,10 @@ const HomeScreen = () => {
     let temp = [...productData];
     temp[i].like = !temp[i].like;
     setProductData(temp);
+
+
   };
+  
 
   return (
     <SafeAreaView className="bg-whitec flex-1">
@@ -149,21 +154,31 @@ const HomeScreen = () => {
             </View>
 
             <View className="mx-12 my-3 flex-row justify-between">
-              <TouchableOpacity onPress={() => console.log('kjdsfhsdkfjh')}>
+              <TouchableOpacity onPress={() => {
+                navigation.navigate("Categories")
+              }}>
                 <Text className="text-newDark">All</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log('kjdsfhsdsskfjh')}>
+              <TouchableOpacity onPress={() => {
+                navigation.navigate("Categories")
+              }}>
                 <Text className="text-newDark">Apparel</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => console.log('kjdsfhsdsskfjh')}>
+              <TouchableOpacity onPress={() => {
+                navigation.navigate("Categories")
+              }}>
                 <Text className="text-newDark">Tshirt</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={() => console.log('kjdsfhsdkfjh')}>
+              <TouchableOpacity onPress={() => {
+                navigation.navigate("Categories")
+              }}>
                 <Text className="text-newDark">Dress</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress={() => console.log('kjdsfhsdddkfjh')}>
+              <TouchableOpacity onPress={() => {
+                navigation.navigate("Categories")
+              }}>
                 <Text className="text-newDark">Bag</Text>
               </TouchableOpacity>
             </View>
@@ -235,7 +250,10 @@ const HomeScreen = () => {
               />
             }
             <View className="mx-4 my-4">
-              <CustomBtn name={'Explore More'} />
+              <CustomBtn name={'Explore More'} onPress={()=>{
+                navigation.navigate("Explore")
+                
+              }}/>
             </View>
             <View>
               <Image

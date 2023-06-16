@@ -34,8 +34,36 @@ const Tab = createBottomTabNavigator();
   /* bottom navigator */
 }
 
-const TabStack = () => (
+
+const DrawerStack = () => (
   <>
+    <Drawer.Navigator
+      screenOptions={{
+        headerShown: false,
+        initialRouteName: 'HomeScreen',
+        drawerStyle: {
+          width: Platform.OS == 'ios' ? '80%' : '80%',
+          height: '100%',
+          backgroundColor: '#fff',
+          color: '#1AAABC',
+        },
+      }}
+      drawerContent={props => <CustomDrawer {...props} />}>
+      <Drawer.Screen name="Drawer Screen" component={TabStack} />
+      <Drawer.Screen name="New" component={New} />
+      <Drawer.Screen name="Apparel" component={Apparel} />
+      <Drawer.Screen name="Bag" component={Bag} />
+      <Drawer.Screen name="Shoes" component={Shoes} />
+      <Drawer.Screen name="Beauty" component={Beauty} />
+      <Drawer.Screen name="Accessories" component={Accessories} />
+      <Drawer.Screen name="Login" component={Login} />
+    </Drawer.Navigator>
+  </>
+);
+
+const MainRotutes = () => {
+  return (
+    <>
     <Tab.Navigator
       backBehavior="history"
       initialRouteName="Home"
@@ -119,53 +147,6 @@ const TabStack = () => (
       />
     </Tab.Navigator>
   </>
-);
-
-const DrawerStack = () => (
-  <>
-    <Drawer.Navigator
-      screenOptions={{
-        headerShown: false,
-        initialRouteName: 'HomeScreen',
-        drawerStyle: {
-          width: Platform.OS == 'ios' ? '80%' : '80%',
-          height: '100%',
-          backgroundColor: '#fff',
-          color: '#1AAABC',
-        },
-      }}
-      drawerContent={props => <CustomDrawer {...props} />}>
-      <Drawer.Screen name="Drawer Screen" component={TabStack} />
-      <Drawer.Screen name="New" component={New} />
-      <Drawer.Screen name="Apparel" component={Apparel} />
-      <Drawer.Screen name="Bag" component={Bag} />
-      <Drawer.Screen name="Shoes" component={Shoes} />
-      <Drawer.Screen name="Beauty" component={Beauty} />
-      <Drawer.Screen name="Accessories" component={Accessories} />
-      <Drawer.Screen name="Login" component={Login} />
-    </Drawer.Navigator>
-  </>
-);
-
-const MainRotutes = () => {
-  return (
-    <>
-      <Stack.Navigator
-        initialRouteName="DrawerStack"
-        screenOptions={{
-          headerShown: false,
-        }}>
-        {/* <Stack.Screen name="Home" component={Home} /> */}
-
-        <Stack.Screen name="DrawerStack" component={DrawerStack} />
-        <Stack.Screen name="ProductDetails" component={ProductDetails} />
-
-        {/* <Stack.Screen name="PaymentList" component={PaymentList} />
-        <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
-
-        <Stack.Screen name="SellerConfirm" component={SellerConfirm} /> */}
-      </Stack.Navigator>
-    </>
   );
 };
 

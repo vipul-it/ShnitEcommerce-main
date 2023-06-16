@@ -8,7 +8,7 @@ import {
   CollapseBody,
 } from 'accordion-collapse-react-native';
 
-const Explore5 = () => {
+const Checkout5 = () => {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapse = () => {
@@ -173,4 +173,4 @@ const Explore5 = () => {
   );
 };
 
-export default Explore5;
+export default Checkout5;
