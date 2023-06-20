@@ -19,8 +19,8 @@ import Checkout4 from '../screens/Dashboard/Checkout4';
 import Checkout5 from '../screens/Dashboard/Checkout5';
 import Checkout6 from '../screens/Dashboard/Checkout6';
 import DrawerStack from '../screens/Dashboard/DrawerStack';
+import SplashScreenMain from '../screens/Onboarding/SplashScreenMain';
 // import TabBar from '../screens/Dashboard/TabBar';
-
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +28,11 @@ const RootNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen
+          name="SplahScreenMain"
+          component={SplashScreenMain}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="Welcome"
           component={Welcome}
@@ -105,17 +110,12 @@ const RootNavigator = () => {
           component={CustomDrawer}
           options={{headerShown: false}}
         />
-        
+
         <Stack.Screen
           name="DrawerStack"
           component={DrawerStack}
           options={{headerShown: false}}
         />
-         {/* <Stack.Screen
-          name="TabBar"
-          component={TabBar}
-          options={{headerShown: false}}
-        /> */}
         
       </Stack.Navigator>
     </NavigationContainer>

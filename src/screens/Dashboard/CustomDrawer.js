@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   SafeAreaView,
@@ -10,10 +10,11 @@ import {
 } from 'react-native';
 import {AccordionList} from 'react-native-accordion-list-view';
 import {iconConst} from '../../utils/Images';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const CustomDrawer = () => {
-  const navigation =useNavigation();
+  const navigation = useNavigation();
+  const [selectedcolor, setSelectedColor] = useState(0);
   const data = [
     {
       id: 0,
@@ -49,22 +50,52 @@ const CustomDrawer = () => {
     }
   }, []);
   return (
-    <SafeAreaView style={{backgroundColor: '#ffffff', flex:1}}>
+    <SafeAreaView style={{backgroundColor: '#ffffff', flex: 1}}>
       <View className="mx-4">
-        <View className="flex-row justify-between py-4">
-          <View>
-            <Text className="text-lg text-newDark">Women</Text>
-            <View className="">
-              <Image className="mt-1 w-44 h-2" source={iconConst.Line} />
-            </View>
-          </View>
-
-          <View>
-            <Text className="text-lg text-newDark">Men</Text>
-            <View className="">
-              <Image className="mt-2 w-20 h-[1px]" source={iconConst.Line13} />
-            </View>
-          </View>
+        
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginHorizontal: 5,
+            width: '90%',
+          }}>
+          <TouchableOpacity
+            style={{}}
+            onPress={() => {
+              setSelectedColor(0);
+            }}>
+            <Text style={{color: selectedcolor == 0 ? '#1AAABC' : '#555555', marginVertical: 5, fontSize: 20, fontWeight: 500}}>
+              Women
+            </Text>
+            <TouchableOpacity>
+              {selectedcolor == '0' ? (
+                <Image
+                  source={require('../../assets/icons/other/line2.png')}
+                  style={{width: 100, height: 6}}
+                />
+              ) : null}
+            </TouchableOpacity>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{}}
+            onPress={() => {
+              setSelectedColor(1);
+            }}>
+            <Text style={{color: selectedcolor == 1 ? '#1AAABC' : '#555555', marginVertical: 5,fontSize: 20, fontWeight: 500}}>
+              {' '}
+              Men
+            </Text>
+            <TouchableOpacity>
+              {selectedcolor == '1' ? (
+                <Image
+                  source={require('../../assets/icons/other/line2.png')}
+                  style={{width: 100, height: 6}}
+                />
+              ) : null}
+            </TouchableOpacity>
+          </TouchableOpacity>
         </View>
         <View className="">
           <AccordionList
@@ -76,44 +107,52 @@ const CustomDrawer = () => {
             )}
             customBody={item => (
               <View className="py-0 mt-2 pl-2">
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">Outer</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">Dress</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">Blouse/Shirt</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">T-shirt</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">Knitwear</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">Pants</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">Denim</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=>{
-                  navigation.navigate("Categories")
-                }} >
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Categories');
+                  }}>
                   <Text className="my-2 text-newDark">Kids</Text>
                 </TouchableOpacity>
               </View>

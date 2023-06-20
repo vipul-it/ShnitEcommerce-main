@@ -107,7 +107,7 @@ const Checkout2 = () => {
           </View>
         </View>
 
-        <View className="mt-[50%]">
+        <View className="mt-[40%]">
           <View className="flex-row items-center justify-between mx-2 my-2">
             <Text className="text-newDark font-semibold ">EST. TOTAL</Text>
             <Text className="my-1 text-sm font-Bold text-theme">

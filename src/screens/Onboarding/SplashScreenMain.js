@@ -6,9 +6,9 @@ import { useNavigation } from '@react-navigation/native';
 const SplashScreenMain = () => {
   const navigation = useNavigation();
   useEffect(() => {
-    const timer = setTimeout(()=>{
-      navigation.navigate('Welcome')
-    }, 3000);
+    setTimeout(() => {
+      navigation.navigate('Welcome');
+  },3000);
   },[]);
   return (
     <View className="flex-1">

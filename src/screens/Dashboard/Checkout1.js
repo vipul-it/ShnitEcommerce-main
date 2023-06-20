@@ -88,7 +88,7 @@ const Checkout1 = () => {
         </View>
         <Text className="border-b-[0.3px] border-btext"></Text>
 
-        <View className="mt-[60%]">
+        <View className="mt-[30%]">
           <View className="flex-row items-center justify-between mx-2 my-2">
             <Text className="text-newDark font-semibold ">EST. TOTAL</Text>
             <Text className="my-1 text-sm font-Bold text-theme">

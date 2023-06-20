@@ -10,6 +10,8 @@ import {
   StatusBar,
 } from 'react-native';
 import React, {useEffect, useState} from 'react';
+import Carousel from './Carousel';
+import { dummyData } from './data/Data';
 
 import homeImg from '../../assets/images/homeScreen/pic.png';
 
@@ -35,7 +37,7 @@ import BestCollectionImg from '../../assets/images/homeScreen/Frame686556095.png
 import border from '../../assets/images/homeScreen/boder.png';
 import {useNavigation} from '@react-navigation/native';
 import Header from './Header';
-// import TabBar from './TabBar';
+
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -150,11 +152,12 @@ const HomeScreen = () => {
         <Header />
         <ScrollView className="">
           <View className="self-center w-screen  mb-12">
-            <Image
+           <Carousel data= {dummyData} />
+            {/* <Image
               resizeMode="contain"
               className="my-3 rounded-lg w-[95%] self-center h-[200] object-contain"
               source={homeImg}
-            />
+            /> */}
             <View className="items-center">
               <Text className="	 text-3xl text-atext font-semibold text-center my-2  ">
                 New Arrival
